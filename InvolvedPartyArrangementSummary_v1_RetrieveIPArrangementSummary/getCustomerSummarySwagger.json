@@ -1,0 +1,153 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "CustomerSummary",
+    "version" : "1.0.0",
+    "description" : "CustomerSummary"
+  },
+  "paths" : {
+    "/{customerId}" : {
+      "get" : {
+        "operationId" : "getCustomerSummaryById",
+        "responses" : {
+          "200" : {
+            "description" : "Successfully retrieved customer summary",
+            "schema" : {
+              "$ref" : "#/definitions/getCustomerSummaryResponse"
+            }
+          },
+          "500" : {
+            "description" : "An error occurred",
+            "schema" : {
+              "$ref" : "#/definitions/faultResponse"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve customer summary information for given customerId",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "customerId",
+          "in" : "path",
+          "type" : "string",
+          "description" : "Customer Relationship Number (CRN)"
+        } ]
+      }
+    }
+  },
+  "basePath" : "/customersummary/v1",
+  "definitions" : {
+    "customerSummary" : {
+      "type" : "object",
+      "properties" : {
+        "customerId" : {
+          "type" : "string"
+        },
+        "prefixTitle" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "middleName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "suffixTitle" : {
+          "type" : "string"
+        },
+        "gender" : {
+          "type" : "string"
+        },
+        "birthDate" : {
+          "type" : "string"
+        },
+        "deathDate" : {
+          "type" : "string"
+        },
+        "permanentAddress" : {
+          "$ref" : "#/definitions/postalAddress"
+        },
+        "correspondanceAddress" : {
+          "$ref" : "#/definitions/postalAddress"
+        },
+        "phoneNumber" : {
+          "type" : "string"
+        },
+        "emailAddress" : {
+          "type" : "string"
+        },
+        "accountIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "postalAddress" : {
+      "type" : "object",
+      "properties" : {
+        "addressLine1" : {
+          "type" : "string"
+        },
+        "addressLine2" : {
+          "type" : "string"
+        },
+        "addressLine3" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "postCode" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getCustomerSummaryResponse" : {
+      "type" : "object",
+      "properties" : {
+        "status" : {
+          "type" : "string"
+        },
+        "customerSummary" : {
+          "$ref" : "#/definitions/customerSummary"
+        }
+      }
+    },
+    "faultStruct" : {
+      "type" : "object",
+      "properties" : {
+        "faultCode" : {
+          "type" : "string"
+        },
+        "faultMessage" : {
+          "type" : "string"
+        },
+        "stackTrace" : {
+          "type" : "string"
+        }
+      }
+    },
+    "faultResponse" : {
+      "type" : "object",
+      "properties" : {
+        "fault" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/faultStruct"
+          }
+        }
+      }
+    }
+  }
+}

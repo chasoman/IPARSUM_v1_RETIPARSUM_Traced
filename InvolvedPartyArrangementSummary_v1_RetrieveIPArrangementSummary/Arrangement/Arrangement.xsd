@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://samples.integration.com/Arrangement" xmlns:arr="http://samples.integration.com/Arrangement">
+    <xsd:complexType name="ArrangementType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="arrangementSummary" type="arr:ArrangementSummaryType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="unbounded" minOccurs="0" name="arrangementTransactions" type="arr:ArrangementTransactionsType"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="ArrangementSummaryType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="arrangementId" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="productId" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="productType" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="productName" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="openDateYYYYMMDD" type="xsd:int"/>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="closeDateYYYYMMDD" type="xsd:int"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="ArrangementTransactionsType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="transactionId" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="transactionDateYYYYMMDD" type="xsd:int">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="transactionAmount" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="transactionType" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="debitOrCredit" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="remarks" type="xsd:string"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

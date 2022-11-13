@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://samples.integration.com/InvolvedPartyArrangementSummary/v1" xmlns:Q1="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary" xmlns:Q2="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:iparsum="http://samples.integration.com/InvolvedPartyArrangementSummary/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <xsd:import namespace="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary" schemaLocation="InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary/RetrieveIPArrangementSummary.xsd"/>
+            <xsd:element ibmSchExtn:docRoot="true" name="retrieveIPArrangementSummaryRequest" type="Q1:RetrieveIPArrangementSummaryRequestType">
+
+            </xsd:element>
+            <xsd:element ibmSchExtn:docRoot="true" name="retrieveIPArrangementSummaryResponse" type="Q1:RetrieveIPArrangementSummaryResponseType">
+
+            </xsd:element>
+            <xsd:element ibmSchExtn:docRoot="true" name="retrieveIPArrangementSummaryFault" type="Q1:RetrieveIPArrangementSummaryFaultType">
+
+            </xsd:element>
+    </xsd:schema>

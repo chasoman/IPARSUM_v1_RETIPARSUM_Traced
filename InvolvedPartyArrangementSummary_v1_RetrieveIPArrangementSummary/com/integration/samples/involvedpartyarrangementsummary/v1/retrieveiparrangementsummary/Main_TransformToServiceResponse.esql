@@ -1,0 +1,64 @@
+BROKER SCHEMA com.integration.samples.involvedpartyarrangementsummary.v1.retrieveiparrangementsummary
+
+
+CREATE COMPUTE MODULE Main_TransformToServiceResponse
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+
+		DECLARE envRef REFERENCE TO Environment;
+		
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.status = InputRoot.JSON.Data.getCustomerSummaryResponse.status;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.prefixTitle = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.prefixTitle;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.firstName = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.firstName;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.middleName = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.middleName;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.lastName = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.lastName;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.suffixTitle = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.suffixTitle;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.gender = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.gender;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.dateOfBirthYYYYMMDD = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.birthDate;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.dateOfDeathYYYYMMDD = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.deathDate;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.addressLine1 = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.permanentAddress.addressLine1;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.addressLine2 = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.permanentAddress.addressLine2;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.addressLine3 = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.permanentAddress.addressLine3;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.city = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.permanentAddress.city;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.postCode = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.permanentAddress.postCode;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.countryCodeISO = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.permanentAddress.countryCode;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.contactPhoneNumber = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.phoneNumber;
+--		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.contactEmailAddress = InputRoot.JSON.Data.getCustomerSummaryResponse.customerSummary.emailAddress;
+
+		SET OutputLocalEnvironment.Destination = InputRoot.ComIbmGroupCompleteNode.Group.Context.ReplyStuff;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.status = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.status;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.prefixTitle = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.prefixTitle;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.firstName = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.firstName;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.middleName = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.middleName;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.lastName = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.lastName;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.name.suffixTitle = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.suffixTitle;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.gender = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.gender;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.dateOfBirthYYYYMMDD = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.birthDate;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.dateOfDeathYYYYMMDD = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.deathDate;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.addressLine1 = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.permanentAddress.addressLine1;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.addressLine2 = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.permanentAddress.addressLine2;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.addressLine3 = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.permanentAddress.addressLine3;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.city = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.permanentAddress.city;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.postCode = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.permanentAddress.postCode;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.permanentAddress.countryCodeISO = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.permanentAddress.countryCode;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.contactPhoneNumber = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.phoneNumber;
+		SET OutputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryResponse.individual.contactEmailAddress = InputRoot.ComIbmGroupCompleteNode.Group.Context.GetSummaryResponse.getCustomerSummaryResponse.customerSummary.emailAddress;
+
+
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

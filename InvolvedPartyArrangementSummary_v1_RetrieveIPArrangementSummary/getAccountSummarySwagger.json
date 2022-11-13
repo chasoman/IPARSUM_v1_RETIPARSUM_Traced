@@ -1,0 +1,99 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "accountSummary",
+    "version" : "1.0.0",
+    "description" : "accountSummary"
+  },
+  "paths" : {
+    "/{accountId}" : {
+      "get" : {
+        "operationId" : "getAccountSummaryById",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/getAccountSummaryResponse"
+            }
+          },
+          "500" : {
+            "description" : "Fault Response",
+            "schema" : {
+              "$ref" : "#/definitions/faultResponse"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve account summary for the given accountId",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "accountId",
+          "in" : "path",
+          "type" : "string"
+        } ]
+      }
+    }
+  },
+  "basePath" : "/accountsummary/v1",
+  "definitions" : {
+    "accountSummary" : {
+      "type" : "object",
+      "properties" : {
+        "accountId" : {
+          "type" : "string"
+        },
+        "productId" : {
+          "type" : "string"
+        },
+        "productType" : {
+          "type" : "string"
+        },
+        "productName" : {
+          "type" : "string"
+        },
+        "openDate" : {
+          "type" : "string"
+        },
+        "closedDate" : {
+          "type" : "string"
+        }
+      }
+    },
+    "faultStruct" : {
+      "type" : "object",
+      "properties" : {
+        "faultCode" : {
+          "type" : "string"
+        },
+        "faultMessage" : {
+          "type" : "string"
+        },
+        "stackTrace" : {
+          "type" : "string"
+        }
+      }
+    },
+    "faultResponse" : {
+      "type" : "object",
+      "properties" : {
+        "fault" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/faultStruct"
+          }
+        }
+      }
+    },
+    "getAccountSummaryResponse" : {
+      "type" : "object",
+      "properties" : {
+        "status" : {
+          "type" : "string"
+        },
+        "accountSummary" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

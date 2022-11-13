@@ -1,0 +1,26 @@
+
+
+Importing file: C:\Users\chait.LAPTOP-U3EDSTAU\Documents\Abhyaas\ACE12Workspaces\TEMP_IPAS\com\integration\samples\InvolvedPartyArrangementSummary\v1\service\InvolvedPartyArrangementSummary.wsdl
+
+The WSDL import will proceed with bindings InvolvedPartyArrangementSummarySOAP.
+Creating wsdl schema document for file:///C:/Users/chait.LAPTOP-U3EDSTAU/Documents/Abhyaas/ACE12Workspaces/TEMP_IPAS/com/integration/samples/InvolvedPartyArrangementSummary/v1/service/InvolvedPartyArrangementSummary.wsdl.
+Parsing wsdl binding {http://samples.integration.com/InvolvedPartyArrangementSummary/v1}InvolvedPartyArrangementSummarySOAP.
+Parsing wsdl binding input retrieveIPArrangementSummary.
+Parsing wsdl binding output retrieveIPArrangementSummary.
+Parsing wsdl binding fault fault.
+Processing doc style for operation retrieveIPArrangementSummary.
+Populating WSDL schema InvolvedPartyArrangementSummary.xsd.
+Creating file InvolvedPartyArrangementSummary.xsd in the workspace.
+Creating file InvolvedPartyArrangementSummary_InlineSchema1.xsd in the workspace.
+Creating file /InvolvedPartyArrangementSummary_v1_RetrieveIPArrangementSummary/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary/RetrieveIPArrangementSummary.xsd in the workspace.
+Creating file /InvolvedPartyArrangementSummary_v1_RetrieveIPArrangementSummary/Arrangement/Arrangement.xsd in the workspace.
+Creating file /InvolvedPartyArrangementSummary_v1_RetrieveIPArrangementSummary/Individual/Individual.xsd in the workspace.
+Copying source WSDL InvolvedPartyArrangementSummary.wsdl to InvolvedPartyArrangementSummary.wsdl.
+
+Elapsed time processing this message definition file: 0.199 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

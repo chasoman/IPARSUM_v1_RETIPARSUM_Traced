@@ -1,0 +1,32 @@
+BROKER SCHEMA com.integration.samples.involvedpartyarrangementsummary.v1.retrieveiparrangementsummary
+DECLARE ns NAMESPACE 'http://samples.integration.com/InvolvedPartyArrangementSummary/v1';
+
+
+CREATE COMPUTE MODULE Main_SetEnvValues_GetCustomerSummary
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE localEnvRef REFERENCE TO OutputLocalEnvironment;
+		
+		CREATE LASTCHILD OF OutputLocalEnvironment.Destination.REST.Request.Parameters AS localEnvRef NAME 'customerId';
+		SET localEnvRef = InputRoot.SOAP.Body.ns:retrieveIPArrangementSummaryRequest.involvedPartyId;
+		
+		CREATE LASTCHILD OF OutputLocalEnvironment.Destination.REST.Request.UserContext AS localEnvRef NAME 'ReplyStuff';
+		SET localEnvRef = InputLocalEnvironment.Destination;
+
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://samples.integration.com/Individual" xmlns:idv="http://samples.integration.com/Individual">
+    <xsd:complexType name="IndividualType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="name" type="idv:IndividualNameType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="gender" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="dateOfBirthYYYYMMDD" type="xsd:int">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="dateOfDeathYYYYMMDD" type="xsd:int">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="permanentAddress" type="idv:IndividualPostalAddressType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="correspondanceAddress" type="idv:IndividualPostalAddressType"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="contactPhoneNumber" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="contactEmailAddress" type="xsd:string">
+    		</xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="IndividualNameType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="prefixTitle" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="firstName" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="middleName" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="lastName" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="suffixTitle" type="xsd:string"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="IndividualPostalAddressType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="addressLine1" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="addressLine2" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="addressLine3" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="city" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="state" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="postCode" type="xsd:string"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="countryCodeISO" type="xsd:string"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

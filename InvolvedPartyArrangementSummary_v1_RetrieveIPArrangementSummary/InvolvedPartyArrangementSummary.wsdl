@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="InvolvedPartyArrangementSummary" targetNamespace="http://samples.integration.com/InvolvedPartyArrangementSummary/v1" xmlns:iparsum="http://samples.integration.com/InvolvedPartyArrangementSummary/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="InvolvedPartyArrangementSummary_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="InvolvedPartyArrangementSummarySOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    
+          <xsd:schema targetNamespace="http://samples.integration.com/InvolvedPartyArrangementSummary/v1" xmlns:Q1="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary" xmlns:Q2="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+<xsd:import namespace="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary" schemaLocation="InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary/RetrieveIPArrangementSummary.xsd"/>
+<xsd:include schemaLocation="InvolvedPartyArrangementSummary_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="retrieveIPArrangementSummaryRequest">
+    <wsdl:part element="iparsum:retrieveIPArrangementSummaryRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveIPArrangementSummaryResponse">
+    <wsdl:part element="iparsum:retrieveIPArrangementSummaryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveIPArrangementSummaryFault">
+  	<wsdl:part element="iparsum:retrieveIPArrangementSummaryFault" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="InvolvedPartyArrangementSummary">
+    <wsdl:operation name="retrieveIPArrangementSummary">
+      <wsdl:input message="iparsum:retrieveIPArrangementSummaryRequest"/>
+      <wsdl:output message="iparsum:retrieveIPArrangementSummaryResponse"/>
+            <wsdl:fault message="iparsum:retrieveIPArrangementSummaryFault" name="fault"/>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InvolvedPartyArrangementSummarySOAP" type="iparsum:InvolvedPartyArrangementSummary">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="retrieveIPArrangementSummary">
+      <soap:operation soapAction="retrieveIPArrangementSummary"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+                <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+        </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InvolvedPartyArrangementSummary">
+    <wsdl:port binding="iparsum:InvolvedPartyArrangementSummarySOAP" name="InvolvedPartyArrangementSummarySOAP">
+      <soap:address location="http://samples.integration.com/InvolvedPartyArrangementSummary/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
