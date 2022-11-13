@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="4dadc5ff-b49e-475f-9684-dfd23f12052a" activeEnvironment="Default" name="IPARSUM" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="04e59301-8f7c-47f8-ad29-b1b8fd80b90a" wsaVersion="NONE" name="InvolvedPartyArrangementSummarySOAP" type="wsdl" bindingName="{http://samples.integration.com/InvolvedPartyArrangementSummary/v1}InvolvedPartyArrangementSummarySOAP" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/chait.LAPTOP-U3EDSTAU/Documents/Abhyaas/ACE12Workspaces/TEMP_IPAS/com/integration/samples/InvolvedPartyArrangementSummary/v1/service/InvolvedPartyArrangementSummary.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\chait.LAPTOP-U3EDSTAU\Documents\Abhyaas\ACE12Workspaces\TEMP_IPAS\com\integration\samples\InvolvedPartyArrangementSummary\v1\service\InvolvedPartyArrangementSummary.wsdl"><con:part><con:url>file:\C:\Users\chait.LAPTOP-U3EDSTAU\Documents\Abhyaas\ACE12Workspaces\TEMP_IPAS\com\integration\samples\InvolvedPartyArrangementSummary\v1\service\InvolvedPartyArrangementSummary.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="InvolvedPartyArrangementSummary" targetNamespace="http://samples.integration.com/InvolvedPartyArrangementSummary/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:iparsum="http://samples.integration.com/InvolvedPartyArrangementSummary/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://samples.integration.com/InvolvedPartyArrangementSummary/v1" xmlns:Q1="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary" xmlns:Q2="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary">
+      <xsd:import schemaLocation="../RetrieveIPArrangementSummary/RetrieveIPArrangementSummary.xsd" namespace="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary"/>
+      <xsd:element name="retrieveIPArrangementSummaryRequest" type="Q1:RetrieveIPArrangementSummaryRequestType"></xsd:element>
+      <xsd:element name="retrieveIPArrangementSummaryResponse" type="Q1:RetrieveIPArrangementSummaryResponseType"></xsd:element>
+      <xsd:element name="retrieveIPArrangementSummaryFault" type="Q2:RetrieveIPArrangementSummaryFaultType"></xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="retrieveIPArrangementSummaryRequest">
+    <wsdl:part element="iparsum:retrieveIPArrangementSummaryRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveIPArrangementSummaryResponse">
+    <wsdl:part element="iparsum:retrieveIPArrangementSummaryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="retrieveIPArrangementSummaryFault">
+    <wsdl:part name="parameters" element="iparsum:retrieveIPArrangementSummaryFault"/>
+  </wsdl:message>
+  <wsdl:portType name="InvolvedPartyArrangementSummary">
+    <wsdl:operation name="retrieveIPArrangementSummary">
+      <wsdl:input message="iparsum:retrieveIPArrangementSummaryRequest"/>
+      <wsdl:output message="iparsum:retrieveIPArrangementSummaryResponse"/>
+      <wsdl:fault name="fault" message="iparsum:retrieveIPArrangementSummaryFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InvolvedPartyArrangementSummarySOAP" type="iparsum:InvolvedPartyArrangementSummary">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="retrieveIPArrangementSummary">
+      <soap:operation soapAction="retrieveIPArrangementSummary"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InvolvedPartyArrangementSummary">
+    <wsdl:port binding="iparsum:InvolvedPartyArrangementSummarySOAP" name="InvolvedPartyArrangementSummarySOAP">
+      <soap:address location="http://samples.integration.com/InvolvedPartyArrangementSummary/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\chait.LAPTOP-U3EDSTAU\Documents\Abhyaas\ACE12Workspaces\TEMP_IPAS\com\integration\samples\InvolvedPartyArrangementSummary\v1\RetrieveIPArrangementSummary\RetrieveIPArrangementSummary.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:riparsum="http://samples.integration.com/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary" xmlns:Q1="http://samples.integration.com/Individual" xmlns:Q2="http://samples.integration.com/Arrangement">
+  <xsd:import schemaLocation="../../../Arrangement/Arrangement.xsd" namespace="http://samples.integration.com/Arrangement"/>
+  <xsd:import schemaLocation="../../../Individual/Individual.xsd" namespace="http://samples.integration.com/Individual"/>
+  <xsd:complexType name="RetrieveIPArrangementSummaryRequestType">
+    <xsd:sequence>
+      <xsd:element name="involvedPartyId" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RetrieveIPArrangementSummaryResponseType">
+    <xsd:sequence>
+      <xsd:element name="status" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+      <xsd:element name="individual" type="Q1:IndividualType" minOccurs="0" maxOccurs="1"></xsd:element>
+      <xsd:element name="arrangements" type="Q2:ArrangementType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RetrieveIPArrangementSummaryFaultType">
+    <xsd:sequence>
+      <xsd:element name="faultCode" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="faultMessage" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\chait.LAPTOP-U3EDSTAU\Documents\Abhyaas\ACE12Workspaces\TEMP_IPAS\com\integration\samples\Arrangement\Arrangement.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://samples.integration.com/Arrangement" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:arr="http://samples.integration.com/Arrangement">
+  <xsd:complexType name="ArrangementType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="arrangementSummary" type="arr:ArrangementSummaryType"></xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="arrangementTransactions" type="arr:ArrangementTransactionsType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrangementSummaryType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="arrangementId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="productId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="productType" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="productName" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="openDateYYYYMMDD" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="closeDateYYYYMMDD" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrangementTransactionsType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="transactionId" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="transactionDateYYYYMMDD" type="xsd:int"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="transactionAmount" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="transactionType" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="debitOrCredit" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="remarks" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\chait.LAPTOP-U3EDSTAU\Documents\Abhyaas\ACE12Workspaces\TEMP_IPAS\com\integration\samples\Individual\Individual.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://samples.integration.com/Individual" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:idv="http://samples.integration.com/Individual">
+  <xsd:complexType name="IndividualType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="name" type="idv:IndividualNameType"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="gender" type="xsd:string"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="dateOfBirthYYYYMMDD" type="xsd:int"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="dateOfDeathYYYYMMDD" type="xsd:int"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="permanentAddress" type="idv:IndividualPostalAddressType"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="correspondanceAddress" type="idv:IndividualPostalAddressType"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="contactPhoneNumber" type="xsd:string"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="contactEmailAddress" type="xsd:string"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="IndividualNameType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="prefixTitle" type="xsd:string"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="firstName" type="xsd:string"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="middleName" type="xsd:string"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="lastName" type="xsd:string"></xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="suffixTitle" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="IndividualPostalAddressType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="addressLine1" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="addressLine2" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="addressLine3" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="city" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="state" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="postCode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="countryCodeISO" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://samples.integration.com/InvolvedPartyArrangementSummary/v1</con:endpoint></con:endpoints><con:operation id="da003d1c-40b4-403d-9d55-747c25467463" isOneWay="false" action="retrieveIPArrangementSummary" name="retrieveIPArrangementSummary" bindingOperationName="retrieveIPArrangementSummary" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="69718c7a-35e1-4108-923c-8cba8a82a3d0" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7800/InvolvedPartyArrangementSummary/v1/RetrieveIPArrangementSummary</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://samples.integration.com/InvolvedPartyArrangementSummary/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:retrieveIPArrangementSummaryRequest>\r
+         <involvedPartyId>1234567893</involvedPartyId>\r
+      </v1:retrieveIPArrangementSummaryRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="retrieveIPArrangementSummary"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="603810aa-b415-4762-a3fa-6c573c098845" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="800aca68-b610-4035-b664-c607dff905fb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="mockresponse" name="retrieveIPArrangementSummary" id="5bcf013f-8420-47ac-a07d-43bf375053b1"><con:settings/><con:config xsi:type="con:MockResponseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InvolvedPartyArrangementSummarySOAP</con:interface><con:operation>retrieveIPArrangementSummary</con:operation><con:path>/retrieveIPArrangementSummary</con:path><con:port>8181</con:port><con:response id="71e03eee-e2df-4041-8459-b64122c3c809"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://samples.integration.com/InvolvedPartyArrangementSummary/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:retrieveIPArrangementSummaryResponse>
+         <!--Optional:-->
+         <status>?</status>
+         <!--Optional:-->
+         <individual>
+            <name>
+               <!--Optional:-->
+               <prefixTitle>?</prefixTitle>
+               <firstName>?</firstName>
+               <!--Optional:-->
+               <middleName>?</middleName>
+               <lastName>?</lastName>
+               <!--Optional:-->
+               <suffixTitle>?</suffixTitle>
+            </name>
+            <gender>?</gender>
+            <dateOfBirthYYYYMMDD>?</dateOfBirthYYYYMMDD>
+            <!--Optional:-->
+            <dateOfDeathYYYYMMDD>?</dateOfDeathYYYYMMDD>
+            <permanentAddress>
+               <addressLine1>?</addressLine1>
+               <!--Optional:-->
+               <addressLine2>?</addressLine2>
+               <!--Optional:-->
+               <addressLine3>?</addressLine3>
+               <city>?</city>
+               <!--Optional:-->
+               <state>?</state>
+               <postCode>?</postCode>
+               <countryCodeISO>?</countryCodeISO>
+            </permanentAddress>
+            <!--Optional:-->
+            <correspondanceAddress>
+               <addressLine1>?</addressLine1>
+               <!--Optional:-->
+               <addressLine2>?</addressLine2>
+               <!--Optional:-->
+               <addressLine3>?</addressLine3>
+               <city>?</city>
+               <!--Optional:-->
+               <state>?</state>
+               <postCode>?</postCode>
+               <countryCodeISO>?</countryCodeISO>
+            </correspondanceAddress>
+            <contactPhoneNumber>?</contactPhoneNumber>
+            <!--Optional:-->
+            <contactEmailAddress>?</contactEmailAddress>
+         </individual>
+         <!--Zero or more repetitions:-->
+         <arrangements>
+            <arrangementSummary>
+               <arrangementId>?</arrangementId>
+               <productId>?</productId>
+               <productType>?</productType>
+               <productName>?</productName>
+               <openDateYYYYMMDD>?</openDateYYYYMMDD>
+               <!--Optional:-->
+               <closeDateYYYYMMDD>?</closeDateYYYYMMDD>
+            </arrangementSummary>
+            <!--Zero or more repetitions:-->
+            <arrangementTransactions>
+               <transactionId>?</transactionId>
+               <transactionDateYYYYMMDD>?</transactionDateYYYYMMDD>
+               <transactionAmount>?</transactionAmount>
+               <transactionType>?</transactionType>
+               <debitOrCredit>?</debitOrCredit>
+               <!--Optional:-->
+               <remarks>?</remarks>
+            </arrangementTransactions>
+         </arrangements>
+      </v1:retrieveIPArrangementSummaryResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
